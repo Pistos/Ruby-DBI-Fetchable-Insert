@@ -1,0 +1,14 @@
+CREATE OR REPLACE VIEW api__sub1 AS
+SELECT
+    NULL::VARCHAR AS data
+WHERE
+    FALSE
+;
+
+CREATE OR REPLACE RULE rule__sub1 AS
+ON INSERT TO api__sub1
+DO INSTEAD (
+    INSERT INTO t( data ) VALUES ( NEW.data );
+    SELECT * FROM t;
+);
+

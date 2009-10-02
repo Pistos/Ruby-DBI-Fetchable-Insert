@@ -1,0 +1,4 @@
+CREATE TABLE t (
+      id SERIAL PRIMARY KEY
+    , data VARCHAR( 64 ) NOT NULL
+)
